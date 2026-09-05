@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08090b">
+  <meta name="description" content="Zeeraii Spice Route — Family Restaurant & Café. Pure vegetarian food, South Indian, Indian, breakfast, Chinese, fast food and beverages.">
+  <title>Zeeraii Spice Route | Family Restaurant & Café</title>
+  <link rel="icon" type="image/jpeg" href="logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#07090b; --bg2:#0d1115; --card:rgba(255,255,255,.055);
+      --line:rgba(255,255,255,.12); --text:#f7f3ea; --muted:#a8adb2;
+      --gold:#d7ae63; --gold2:#f1d29a; --green:#6bd39b;
+      --shadow:0 25px 80px rgba(0,0,0,.45); --radius:24px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:"DM Sans",sans-serif;background:
+      radial-gradient(circle at 10% 15%,rgba(215,174,99,.09),transparent 26%),
+      radial-gradient(circle at 88% 35%,rgba(107,211,155,.06),transparent 24%),var(--bg);
+      color:var(--text);overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.055;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");z-index:50}
+    a{text-decoration:none;color:inherit}.container{width:min(1180px,92%);margin:auto}
+    .topbar{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 0;transition:.3s}
+    .topbar.scrolled{background:rgba(7,9,11,.78);border-bottom:1px solid var(--line)}
+    nav{display:flex;align-items:center;justify-content:space-between;gap:25px}
+    .brand{display:flex;align-items:center;gap:11px;font-weight:700;letter-spacing:.12em}
+    .brand img{width:45px;height:45px;border-radius:50%;object-fit:cover;background:#fff}
+    .brand span{font-size:13px}.brand b{color:var(--gold)}
+    .navlinks{display:flex;gap:24px;font-size:13px;color:#d5d7d9}.navlinks a{transition:.2s}.navlinks a:hover{color:var(--gold2)}
+    .nav-cta{padding:11px 17px;border:1px solid rgba(215,174,99,.5);border-radius:999px;color:var(--gold2);font-size:13px}
+    .hero{min-height:100vh;display:grid;place-items:center;position:relative;padding:130px 0 80px;isolation:isolate}
+    .hero-bg{position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(7,9,11,.96) 0%,rgba(7,9,11,.74) 47%,rgba(7,9,11,.58)),url("cafe-front.jpg") center/cover no-repeat;filter:saturate(.75)}
+    .hero:after{content:"";position:absolute;inset:auto 0 0;height:35%;background:linear-gradient(transparent,var(--bg));z-index:-1}
+    .glow{position:absolute;width:420px;height:420px;border-radius:50%;background:rgba(215,174,99,.12);right:-150px;top:25%;z-index:-1;animation:pulse 6s ease-in-out infinite}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:70px}
+    .eyebrow{color:var(--gold2);font-size:12px;letter-spacing:.3em;text-transform:uppercase;margin-bottom:18px}
+    h1{font-family:"Cormorant Garamond",serif;font-size:clamp(62px,9vw,116px);line-height:.78;letter-spacing:-.04em;font-weight:600}
+    h1 em{font-style:normal;color:var(--gold2)}
+    .hero-copy p{max-width:560px;color:#c2c5c8;line-height:1.8;margin:28px 0;font-size:16px}
+    .buttons{display:flex;gap:13px;flex-wrap:wrap}.btn{padding:14px 21px;border-radius:999px;font-weight:700;font-size:13px;display:inline-flex;align-items:center;gap:9px;transition:.25s;cursor:pointer;border:1px solid var(--line)}
+    .btn.primary{background:linear-gradient(135deg,#e8c47e,#bd8d3e);color:#17120a;box-shadow:0 10px 35px rgba(215,174,99,.2);border:0}
+    .btn.primary:hover{transform:translateY(-3px);box-shadow:0 15px 45px rgba(215,174,99,.3)}
+    .btn.ghost:hover{border-color:var(--gold);color:var(--gold2);transform:translateY(-2px)}
+    .hero-card{position:relative;justify-self:end;width:min(440px,100%);padding:14px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.045);backdrop-border-radius:30px;box-shadow:var(--shadow);transform:none;animation:float 7s ease-in-out infinite}
+    .hero-card img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:20px;display:block}
+    .hero-badge{position:absolute;left:-28px;bottom:28px;background:#101418;border:1px solid rgba(215,174,99,.5);padding:16px 18px;border-radius:16px;box-shadow:var(--shadow);font-size:12px}.hero-badge strong{display:block;color:var(--gold2);font-size:16px;margin-bottom:3px}
+    .marquee{border-block:1px solid var(--line);overflow:hidden;background:#0b0e11}.marquee-track{display:flex;white-space:nowrap;gap:38px;width:max-content;padding:15px 0;animation:none;color:#bfc2c5;font-size:11px;letter-spacing:.22em;text-transform:uppercase}.dot{color:var(--gold)}
+    section{padding:105px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:38px}.kicker{font-size:11px;color:var(--gold);letter-spacing:.25em;text-transform:uppercase;margin-bottom:10px}.section-title{font-family:"Cormorant Garamond",serif;font-size:clamp(42px,6vw,68px);line-height:.9}.section-sub{color:var(--muted);max-width:470px;line-height:1.7;font-size:14px}
+    .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.feature{border:1px solid var(--line);background:linear-gradient(145deg,rgba(255,255,255,.065),rgba(255,255,255,.02));padding:28px;border-radius:var(--radius);min-height:190px;transition:.35s;position:relative;overflow:hidden}.feature:after{content:"";position:absolute;width:150px;height:150px;border-radius:50%;right:-80px;bottom:-90px;background:rgba(215,174,99,.12);filter:blur(30px)}.feature:hover{transform:none;border-color:rgba(215,174,99,.35)}.icon{font-size:26px;margin-bottom:25px}.feature h3{font-family:"Cormorant Garamond",serif;font-size:28px;margin-bottom:7px}.feature p{color:var(--muted);font-size:13px;line-height:1.65}
+    .menu-wrap{display:grid;grid-template-columns:260px 1fr;gap:30px}.menu-tabs{display:flex;flex-direction:column;gap:8px;position:sticky;top:100px;align-self:start}.tab{background:transparent;color:#aaa;border:1px solid transparent;text-align:left;padding:13px 16px;border-radius:12px;cursor:pointer;font:inherit;font-size:13px}.tab.active,.tab:hover{background:rgba(215,174,99,.09);border-color:rgba(215,174,99,.2);color:var(--gold2)}.menu-panel{border:1px solid var(--line);background:rgba(255,255,255,.035);border-radius:var(--radius);padding:30px}.menu-panel h3{font-family:"Cormorant Garamond",serif;font-size:40px;margin-bottom:5px}.menu-panel .note{font-size:12px;color:var(--muted);margin-bottom:22px}.menu-list{display:grid;grid-template-columns:1fr 1fr;gap:0 28px}.item{display:flex;justify-content:space-between;gap:15px;padding:14px 0;border-bottom:1px dashed rgba(255,255,255,.1);font-size:13px}.price{color:var(--gold2);font-weight:700;white-space:nowrap}.menu-extra{margin-top:28px;border-top:1px solid var(--line);padding-top:22px;color:#c6c9cb;font-size:12px;line-height:1.7}
+    .gallery{display:grid;grid-template-columns:1.35fr .8fr .8fr;grid-auto-rows:250px;gap:15px}.gallery figure{margin:0;border-radius:20px;overflow:hidden;border:1px solid var(--line);position:relative;cursor:pointer}.gallery figure:first-child{grid-row:span 2}.gallery img{width:100%;height:100%;object-fit:cover;transition:.6s;filter:saturate(.82)}.gallery figure:hover img{transform:none;filter:saturate(1)}.gallery figcaption{position:absolute;left:14px;bottom:14px;background:rgba(7,9,11,.72);backdrop-padding:7px 10px;border-radius:999px;font-size:10px;color:#ddd}
+    .order{position:relative;overflow:hidden;border:1px solid rgba(215,174,99,.25);border-radius:32px;background:linear-gradient(120deg,rgba(215,174,99,.13),rgba(255,255,255,.035));padding:55px}.order:before{content:"";position:absolute;width:400px;height:400px;border-radius:50%;right:-160px;top:-180px;background:rgba(215,174,99,.15);filter:blur(80px)}.order-grid{display:flex;justify-content:space-between;align-items:center;gap:40px;position:relative}.order h2{font-family:"Cormorant Garamond",serif;font-size:clamp(42px,5vw,62px);max-width:650px}.order p{color:#b8bdc0;margin-top:10px;line-height:1.7}.contact-pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.pill{font-size:12px;border:1px solid var(--line);padding:9px 12px;border-radius:999px;color:#ddd}
+    footer{padding:50px 0 28px;border-top:1px solid var(--line)}.footer-grid{display:flex;justify-content:space-between;gap:30px;align-items:end}.footer-brand{font-family:"Cormorant Garamond",serif;font-size:35px}.footer-brand small{display:block;font-family:"DM Sans",sans-serif;color:var(--muted);font-size:11px;letter-spacing:.2em;text-transform:uppercase;margin-top:5px}.socials{display:flex;gap:9px}.social{border:1px solid var(--line);padding:10px 13px;border-radius:999px;font-size:12px;color:#ddd}.social:hover{border-color:var(--gold);color:var(--gold2)}.copyright{color:#6f757a;font-size:10px;margin-top:35px}
+    .float-wa{position:fixed;right:20px;bottom:20px;z-index:120;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#25D366;color:white;box-shadow:0 12px 40px rgba(37,211,102,.25);font-size:25px;border:2px solid rgba(255,255,255,.25);animation:wa 2.2s infinite}
+    .reveal{opacity:0;transform:translateY(25px);transition:opacity .7s ease,transform .7s ease}.reveal.show{opacity:1;transform:none}
+    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:200;display:none;place-items:center;padding:30px}.lightbox.open{display:grid}.lightbox img{max-width:min(100%,1000px);max-height:88vh;border-radius:16px}.close{position:absolute;right:25px;top:18px;font-size:35px;cursor:pointer;color:white}
+    
+    /* Premium motion layer */
+    .ambient{position:fixed;width:32vw;height:32vw;min-width:260px;min-height:260px;border-radius:50%;pointer-events:none;z-index:-2;mix-blend-mode:screen;opacity:.16}
+    .ambient-1{left:-12vw;top:8vh;background:#d7ae63;animation:orbOne 16s ease-in-out infinite}
+    .ambient-2{right:-12vw;top:42vh;background:#6bd39b;animation:orbTwo 19s ease-in-out infinite}
+    .ambient-3{left:35vw;bottom:-20vw;background:#9a72ff;animation:orbThree 22s ease-in-out infinite}
+    .hero-bg{animation:heroZoom 18s ease-in-out infinite alternate}
+    .glow{animation:pulse 6s ease-in-out infinite,glowDrift 11s ease-in-out infinite}
+    .hero-card{box-shadow:0 0 0 1px rgba(215,174,99,.08),0 25px 80px rgba(0,0,0,.5),0 0 55px rgba(215,174,99,.12);}
+    .hero-card:before,.feature:before,.menu-panel:before,.order:after{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(120deg,transparent 15%,rgba(241,210,154,.5),transparent 45%,rgba(107,211,155,.35),transparent 75%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;animation:borderShimmer 6s linear infinite}
+    .hero-card:before{inset:-1px;border-radius:30px}
+    .hero-card img{animation:imageBreath 8s ease-in-out infinite}
+    .brand img{box-shadow:0 0 0 1px rgba(215,174,99,.3),0 0 28px rgba(215,174,99,.22);animation:logoGlow 3s ease-in-out infinite}
+    .btn.primary{position:relative;overflow:hidden}
+    .btn.primary:after{content:"";position:absolute;top:-60%;left:-45%;width:25%;height:220%;background:rgba(255,255,255,.42);transform:rotate(25deg);filter:blur(5px);animation:shine 4.5s ease-in-out infinite}
+    .feature,.menu-panel,.order{position:relative;overflow:hidden}
+    .feature:hover{box-shadow:0 18px 50px rgba(215,174,99,.10),0 0 35px rgba(215,174,99,.07)}
+    .gallery figure{box-shadow:0 12px 40px rgba(0,0,0,.2);transition:transform .45s ease,box-shadow .45s ease,border-color .45s ease}
+    .gallery figure:hover{transform:none;box-shadow:0 22px 65px rgba(0,0,0,.45),0 0 30px rgba(215,174,99,.12);border-color:rgba(215,174,99,.35)}
+    .marquee-track{animation:marquee 28s linear infinite,marqueeGlow 3s ease-in-out infinite}
+    .float-wa{animation:wa 2.2s infinite,waFloat 4s ease-in-out infinite}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    @media(max-width:850px){.navlinks{display:none}.hero-grid{grid-template-columns:1fr;gap:50px}.hero-card{justify-self:center;width:min(430px,90%)}.feature-grid{grid-template-columns:1fr}.menu-wrap{grid-template-columns:1fr}.menu-tabs{position:static;display:grid;grid-template-columns:repeat(2,1fr)}.menu-list{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr;grid-auto-rows:220px}.gallery figure:first-child{grid-row:span 1}.order-grid,.footer-grid{flex-direction:column;align-items:flex-start}.order{padding:35px 25px}}
+    @media(max-width:520px){section{padding:75px 0}.brand span{display:none}.hero{padding-top:110px}.hero-card{transform:none}.gallery{grid-template-columns:1fr;grid-auto-rows:260px}.menu-panel{padding:22px}.menu-tabs{grid-template-columns:1fr 1fr}.section-head{display:block}.section-sub{margin-top:18px}.float-wa{right:15px;bottom:15px}}
+    @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}.reveal{transition:none!important}}
+  
+/* PREMIUM MOTION PACK */
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:49;
+  background:
+    radial-gradient(circle at 20% 80%,rgba(215,174,99,.07),transparent 22%),
+    radial-gradient(circle at 80% 20%,rgba(107,211,155,.055),transparent 20%);
+  animation:none;
+}
+.hero:before{
+  content:"";position:absolute;inset:-20%;z-index:-1;pointer-events:none;
+  background:conic-gradient(from 0deg,transparent 0 20%,rgba(215,174,99,.10) 24%,transparent 30% 65%,rgba(107,211,155,.06) 70%,transparent 76%);
+  animation:none;
+}
+.hero-copy h1{animation:titleBreath 5s ease-in-out infinite}
+.hero-copy h1 em{
+  text-shadow:0 0 12px rgba(215,174,99,.25),0 0 38px rgba(215,174,99,.12);
+  animation:none;
+}
+.eyebrow{animation:eyebrowPulse 3s ease-in-out infinite}
+.btn{position:relative;overflow:hidden}
+.btn:after{
+  content:"";position:absolute;top:-80%;left:-120%;width:55%;height:260%;
+  transform:rotate(20deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);
+  animation:none;
+}
+.feature,.menu-panel,.order,.hero-card,.gallery figure{
+  box-shadow:0 0 0 rgba(215,174,99,0);
+}
+.feature:hover,.menu-panel:hover,.order:hover,.gallery figure:hover{
+  box-shadow:0 12px 50px rgba(215,174,99,.10),0 0 35px rgba(215,174,99,.055);
+}
+.feature:nth-child(1){animation:cardFloat 7s ease-in-out infinite}
+.feature:nth-child(2){animation:cardFloat 7s ease-in-out 1s infinite}
+.feature:nth-child(3){animation:cardFloat 7s ease-in-out 2s infinite}
+.hero-card:after{
+  content:"";position:absolute;inset:0;border-radius:30px;pointer-events:none;
+  box-shadow:inset 0 0 35px rgba(215,174,99,.12);
+  animation:none;
+}
+.gallery figure:after{
+  content:"";position:absolute;inset:-2px;border-radius:22px;pointer-events:none;
+  border:1px solid transparent;opacity:0;transition:.35s;
+  box-shadow:0 0 28px rgba(215,174,99,.18);
+}
+.gallery figure:hover:after{opacity:1}
+.float-wa{animation:wa 2.2s infinite,waFloat 5s ease-in-out infinite}
+
+
+
+
+
+
+
+
+
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{animation:none;transition:none!important;scroll-behavior:auto!important}
+}
+
+</style>
+</head>
+<body>
+  <div class="ambient ambient-1"></div><div class="ambient ambient-2"></div><div class="ambient ambient-3"></div>
+  <header class="topbar" id="topbar">
+    <div class="container"><nav>
+      <a class="brand" href="#home"><img src="logo.jpg" alt="Zeeraii Spice Route logo"><span>ZEERAI <b>SPICE ROUTE</b></span></a>
+      <div class="navlinks"><a href="#about">About</a><a href="#menu">Menu</a><a href="#gallery">Gallery</a><a href="#order">Order</a></div>
+      <a class="nav-cta" href="https://wa.me/919828809963?text=Hello%20Zeeraii%20Spice%20Route%2C%20I%27d%20like%20to%20place%20an%20order." target="_blank" rel="noopener">WhatsApp Order</a>
+    </nav></div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-bg"></div><div class="glow"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow">Pure Vegetarian • Family Restaurant & Café</div>
+          <h1>Zeeraii<br><em>Spice Route</em></h1>
+          <p>A warm table for families, students and food lovers — from crisp dosas and comforting thalis to momos, pizza, pasta and refreshing café favourites.</p>
+          <div class="buttons">
+            <a class="btn primary" href="#menu">Explore Menu ↗</a>
+            <a class="btn ghost" href="https://wa.me/919828809963?text=Hello%20Zeeraii%20Spice%20Route%2C%20I%27d%20like%20to%20place%20an%20order." target="_blank" rel="noopener">Order on WhatsApp</a>
+          </div>
+        </div>
+        <div class="hero-card reveal">
+          <img src="cafe-front.jpg" alt="Zeeraii Spice Route café front">
+          <div class="hero-badge"><strong>100% Veg</strong>Made for families & students</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee"><div class="marquee-track">
+      <span>South Indian</span><span class="dot">✦</span><span>Indian</span><span class="dot">✦</span><span>Chinese</span><span class="dot">✦</span><span>Breakfast</span><span class="dot">✦</span><span>Fast Food</span><span class="dot">✦</span><span>Café</span><span class="dot">✦</span>
+      <span>South Indian</span><span class="dot">✦</span><span>Indian</span><span class="dot">✦</span><span>Chinese</span><span class="dot">✦</span><span>Breakfast</span><span class="dot">✦</span><span>Fast Food</span><span class="dot">✦</span><span>Café</span><span class="dot">✦</span>
+    </div></div>
+
+    <section id="about"><div class="container">
+      <div class="section-head reveal"><div><div class="kicker">Why Zeerai</div><h2 class="section-title">Good food.<br>Good mood.</h2></div><p class="section-sub">A modern, welcoming vegetarian café built around variety, comfort and value — whether you're grabbing a student meal or sitting down with the whole family.</p></div>
+      <div class="feature-grid">
+        <article class="feature reveal"><div class="icon">🌿</div><h3>Pure Vegetarian</h3><p>Our menu is completely vegetarian, with familiar Indian classics alongside café and Indo-Chinese favourites.</p></article>
+        <article class="feature reveal"><div class="icon">👨‍👩‍👧‍👦</div><h3>For Everyone</h3><p>Family-friendly plates, student-friendly options and plenty of choices for quick bites or full meals.</p></article>
+        <article class="feature reveal"><div class="icon">✨</div><h3>Fresh Variety</h3><p>Dosas, idli, thali, paneer dishes, momos, pizza, noodles, pasta, soups and beverages in one place.</p></article>
+      </div>
+    </div></section>
+
+    <section id="menu"><div class="container">
+      <div class="section-head reveal"><div><div class="kicker">The Menu</div><h2 class="section-title">Pick your mood.</h2></div><p class="section-sub">Browse the menu digitally. Prices below are from the menu shared by Zeeraii Spice Route.</p></div>
+      <div class="menu-wrap reveal">
+        <div class="menu-tabs" aria-label="Menu categories">
+          <button class="tab active" data-menu="breakfast">Breakfast & Bites</button>
+          <button class="tab" data-menu="south">South Indian</button>
+          <button class="tab" data-menu="pizza">Pizza & Chinese</button>
+          <button class="tab" data-menu="thali">Thali & Sides</button>
+          <button class="tab" data-menu="main">Main Course 🍛</button>
+          <button class="tab" data-menu="drinks">Beverages</button>
+        </div>
+        <div class="menu-panel" id="menuPanel"></div>
+      </div>
+    </div></section>
+
+    <section id="gallery"><div class="container">
+      <div class="section-head reveal"><div><div class="kicker">Inside Zeerai</div><h2 class="section-title">See the vibe.</h2></div><p class="section-sub">A glimpse of the food, menu and café. Tap any image to open it.</p></div>
+      <div class="gallery">
+        <figure class="reveal"><img src="cafe-front.jpg" alt="Zeeraii Spice Route café"><figcaption>The café exterior</figcaption></figure>
+        <figure class="reveal"><img src="41414.png" alt="Zeeraii Spice Route café interior"><figcaption>Inside Zeerai</figcaption></figure>
+        <figure class="reveal"><img src="menu-main-course.jpg" alt="Veg main course menu"><figcaption>Indian favourites</figcaption></figure>
+        <figure class="reveal"><img src="menu-south-indian.jpg" alt="South Indian menu"><figcaption>Dosa & South Indian</figcaption></figure>
+        <figure class="reveal"><img src="menu-breakfast.jpg" alt="Breakfast and momos menu"><figcaption>Breakfast & bites</figcaption></figure>
+        <figure class="reveal"><img src="menu-pizza-noodles.jpg" alt="Pizza noodles pasta menu"><figcaption>Café cravings</figcaption></figure>
+        <figure class="reveal"><img src="menu-thali-beverages.jpg" alt="Thali and beverages menu"><figcaption>Thali & drinks</figcaption></figure>
+      </div>
+    </div></section>
+
+    <section id="order"><div class="container"><div class="order reveal">
+      <div class="order-grid">
+        <div><div class="kicker">Ready to eat?</div><h2>Make your next meal a Zeerai moment.</h2><p>For online orders, message us directly on WhatsApp or call us.</p><div class="contact-pills"><span class="pill">📞 9828809963</span><span class="pill">💬 WhatsApp orders</span><span class="pill">🌿 Pure Veg</span></div></div>
+        <div class="buttons"><a class="btn primary" href="https://wa.me/919828809963?text=Hello%20Zeeraii%20Spice%20Route%2C%20I%27d%20like%20to%20place%20an%20order." target="_blank" rel="noopener">WhatsApp Now ↗</a><a class="btn ghost" href="tel:+919828809963">Call 9828809963</a></div>
+      </div>
+    </div></div></section>
+  </main>
+
+  <footer><div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">Zeeraii Spice Route<small>Family Restaurant & Café • Pure Vegetarian</small></div>
+      <div class="socials">
+        <a class="social" href="https://www.instagram.com/zeeraiispiceroute_?stkn=c3lsMG04enhhM3hz" target="_blank" rel="noopener">Instagram ↗</a>
+        <a class="social" href="https://www.youtube.com/@zeeraiispiceroute0" target="_blank" rel="noopener">YouTube ↗</a>
+        <a class="social" href="https://wa.me/919828809963" target="_blank" rel="noopener">WhatsApp ↗</a>
+      </div>
+    </div>
+    <div class="copyright">© <span id="year"></span> Zeeraii Spice Route. Crafted for good food & good mood.</div>
+  </div></footer>
+
+  <a class="float-wa" href="https://wa.me/919828809963?text=Hello%20Zeeraii%20Spice%20Route%2C%20I%27d%20like%20to%20place%20an%20order." target="_blank" rel="noopener" aria-label="Order on WhatsApp">⌕</a>
+  <div class="lightbox" id="lightbox"><span class="close" id="close">×</span><img id="lightboxImg" alt=""></div>
+
+<script>
+// Lightweight ambient particle field — no external libraries.
+
+
+const menus = {
+ breakfast:{title:"Breakfast & Bites",note:"Breakfast, momos, rolls, wraps & sandwiches",items:[
+  ["Chole Puri","₹80"],["Aloo Paratha with Curd","₹70"],["Aloo Pyaj Paratha with Curd","₹90"],["Paneer Paratha","₹100"],["Mix Paratha","₹100"],
+  ["Steam Veg Momos — Half / Full","₹60 / ₹100"],["Fried Veg Momos — Half / Full","₹90 / ₹150"],["Paneer Momos — Half / Full","₹100 / ₹170"],["Paneer Fried Momos — Half / Full","₹120 / ₹200"],["White Gravy Momos — Half / Full","₹150 / ₹230"],["Fried Gravy Momos — Half / Full","₹140 / ₹210"],
+  ["Veg Roll","₹100"],["Paneer Roll","₹120"],["Paneer Cheese Roll","₹150"],["Veg Wrap","₹100"],["Paneer Wrap","₹130"],["Veg Grilled Sandwich","₹110"],["Paneer Grilled Sandwich","₹130"],["Cheese Corn Sandwich","₹170"]
+ ]},
+ south:{title:"South Indian",note:"Dosa, uttapam, idli, vada/upma & rice",items:[
+  ["Plain Dosa","₹90"],["Onion Dosa","₹110"],["Butter Plain Dosa","₹120"],["Desi Ghee Plain Dosa","₹140"],["Cheese Plain Dosa","₹150"],["Butter Cheese Plain Dosa","₹170"],
+  ["Masala Dosa","₹120"],["Cheese Masala Dosa","₹150"],["Butter Masala Dosa","₹150"],["Desi Ghee Masala Dosa","₹170"],["Paneer Masala Dosa","₹190"],["Cheese Butter Masala Dosa","₹200"],["Schezwan Masala Dosa","₹200"],["Paneer Butter Masala Dosa","₹210"],["Schezwan Cheese Masala Dosa","₹210"],
+  ["Mysore Plain Dosa","₹120"],["Cheese Mysore Plain Dosa","₹150"],["Butter Mysore Plain Dosa","₹150"],["Mysore Veg Dosa","₹150"],["Mysore Masala Dosa","₹170"],["Cheese Butter Mysore Plain Dosa","₹180"],["Mysore Cheese Masala Dosa","₹200"],["Butter Mysore Masala Dosa","₹200"],["Mysore Paneer Masala Dosa","₹220"],["Butter Paneer Mysore Masala Dosa","₹260"],
+  ["Plain Uttapam","₹120"],["Tomato Uttapam","₹140"],["Onion Uttapam","₹150"],["Masala Uttapam","₹160"],["Butter Uttapam","₹170"],["Cheese Uttapam","₹190"],["Masala Cheese Uttapam","₹210"],["Veg Cheese Uttapam","₹210"],["Veg Paneer Uttapam","₹230"],
+  ["Simple Idli","₹70"],["Fried Idli","₹120"],["Schezwan Idli","₹140"],["Cheese Idli","₹170"],["Cheese Fried Idli","₹200"],["Veg Upma","₹90"],["Ghee Upma","₹140"],
+  ["Jeera Rice","₹100"],["Veg Rice","₹120"],["Veg Fried Rice","₹150"],["Veg Pulao","₹180"],["Paneer Fried Rice","₹180"],["Cheese Paneer Rice","₹200"]
+ ]},
+ pizza:{title:"Pizza & Chinese",note:"Pizza, chowmein, noodles, pasta, Maggi & soups",items:[
+  ["Onion Pizza","₹110"],["Tomato Pizza","₹130"],["Margherita Pizza","₹180"],["Mix Veg Pizza","₹160"],["Cheese Corn Pizza","₹200"],["Paneer Pizza","₹210"],["Cheese Burst Pizza","₹240"],
+  ["Veg Chowmein — Half / Full","₹90 / ₹150"],["Schezwan Chowmein — Half / Full","₹100 / ₹160"],["Paneer Chowmein — Half / Full","₹110 / ₹170"],["Cheese Chowmein — Half / Full","₹110 / ₹170"],["Cheese Paneer Chowmein — Half / Full","₹150 / ₹230"],["Veg Hakka Noodles — Half / Full","₹100 / ₹160"],["Paneer Hakka Noodles — Half / Full","₹130 / ₹200"],["Cheese Hakka Noodles — Half / Full","₹130 / ₹200"],
+  ["Vegetable Pasta","₹140"],["White Sauce Pasta","₹160"],["Red Sauce Pasta","₹170"],["Masala Maggi","₹60"],["Vegetable Maggi","₹110"],["Paneer Maggi","₹140"],["Veg Soup","₹80"],["Tomato Soup","₹100"],["Sweet Corn Soup","₹120"]
+ ]},
+ thali:{title:"Thali & Sides",note:"Complete meals, fries, salad/raita, papad & breads",items:[
+  ["Zeerai Special Thali","₹260"],["Simple Thali","₹70"],["Plain Fries","₹110"],["Peri Peri Fries","₹130"],["Chilly Potato","₹140"],["Honey Chilly Potato","₹170"],
+  ["Onion Salad","₹40"],["Green Salad","₹70"],["Plain Curd","₹50"],["Boondi Raita","₹100"],["Vegetable Raita","₹130"],["Plain Papad","₹30"],["Masala Papad","₹50"],
+  ["Plain Tawa Roti","₹10"],["Butter Roti","₹15"],["Missi Roti","₹40"],["Laccha Paratha","₹60"],["Makki Roti","₹50"]
+ ]},
+ main:{title:"Main Course",note:"Veg curries & paneer dishes — Half / Full",items:[
+  ["Dal Fry","₹70 / ₹130"],["Dal Tadka","₹80 / ₹150"],["Sev Tomato","₹90 / ₹160"],["Sev Bhaji","₹100 / ₹170"],["Aaloo Matar","₹80 / ₹140"],["Dum Aaloo","₹110 / ₹180"],["Malai Kofta","₹140 / ₹230"],["Mix Veg","₹130 / ₹210"],["Dal Makhni","₹120 / ₹210"],["Gatta Masala","₹120 / ₹220"],["Aaloo Chhola","₹90 / ₹150"],["Chhana Masala","₹110 / ₹200"],["Aaloo Gobhi","₹90 / ₹160"],["Rajma Masala","₹120 / ₹220"],
+  ["Matar Paneer","₹130 / ₹220"],["Palak Paneer","₹140 / ₹230"],["Shahi Paneer","₹140 / ₹230"],["Kadai Paneer","₹140 / ₹230"],["Paneer Butter Masala","₹150 / ₹250"],["Paneer Tikka Masala","₹150 / ₹250"],["Paneer Lababdar","₹180 / ₹290"],["Paneer Changezi","₹200 / ₹330"],["Kaju Kari","₹150 / ₹280"]
+ ]},
+ drinks:{title:"Beverages",note:"Hot, cold & refreshing café drinks",items:[
+  ["Tea","₹20"],["Masala Tea","₹30"],["Hot Coffee","₹30"],["Cold Coffee","₹40"],["Masala Chhachh","₹30"],["Namkeen Lassi","₹50"],["Sweet Lassi","₹80"]
+ ]}
+};
+function renderMenu(key){
+ const m=menus[key], panel=document.getElementById('menuPanel');
+ panel.innerHTML=`<h3>${m.title}</h3><div class="note">${m.note}</div><div class="menu-list">${m.items.map(x=>`<div class="item"><span>${x[0]}</span><span class="price">${x[1]}</span></div>`).join('')}</div>`+
+ (key==='thali'?'<div class="menu-extra"><b>Zeerai Special Thali:</b> 5 Chapati + Rice + Raita + Mix Veg + Shahi Paneer + Sweet Dish + Dal + Salad.<br><b>Simple Thali:</b> 4 Chapati + Rice + Dal + Seasonal Veg + Salad.</div>':'');
+}
+document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));t.classList.add('active');renderMenu(t.dataset.menu)}));
+renderMenu('breakfast');
+
+const observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.08});
+document.querySelectorAll('.reveal').forEach(e=>observer.observe(e));
+const topbar=document.getElementById('topbar'); window.addEventListener('scroll',()=>topbar.classList.toggle('scrolled',scrollY>20));
+document.getElementById('year').textContent=new Date().getFullYear();
+
+const lb=document.getElementById('lightbox'), lbi=document.getElementById('lightboxImg');
+document.querySelectorAll('.gallery figure').forEach(f=>f.addEventListener('click',()=>{lbi.src=f.querySelector('img').src;lbi.alt=f.querySelector('img').alt;lb.classList.add('open')}));
+document.getElementById('close').onclick=()=>lb.classList.remove('open');
+lb.addEventListener('click',e=>{if(e.target===lb)lb.classList.remove('open')});
+</script>
+</body>
+</html>
